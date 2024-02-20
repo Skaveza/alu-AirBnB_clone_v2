@@ -7,12 +7,12 @@ env.hosts = ["54.87.8.16", "34.229.206.87"]
 env.user = "ubuntu"
 env.key = "~/.ssh/id_rsa"
 
+
 def do_deploy(archive_path):
     """Function to distribute an archive to your web servers"""
     if not exists(archive_path):
         return False
     try:
-
 
         file_name = archive_path.split("/")[-1]
         name = file_name.split(".")[0]
@@ -25,7 +25,7 @@ def do_deploy(archive_path):
         run("rm -rf {}/web_static".format(path_name))
         run('rm -rf /data/web_static/current')
         run('ln -s {}/ /data/web_static/current'.format(path_name))
-                # Create 'hbnb_static' directory if it doesn't exist
+         # Create 'hbnb_static' directory if it doesn't exist
         if not isdir("/var/www/html/hbnb_static"):
             run("sudo mkdir -p /var/www/html/hbnb_static")
 
