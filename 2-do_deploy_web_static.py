@@ -25,7 +25,7 @@ def do_deploy(archive_path):
         run("rm -rf {}/web_static".format(path_name))
         run('rm -rf /data/web_static/current')
         run('ln -s {}/ /data/web_static/current'.format(path_name))
-         # Create 'hbnb_static' directory if it doesn't exist
+    # Create 'hbnb_static' directory if it doesn't exist
         if not isdir("/var/www/html/hbnb_static"):
             run("sudo mkdir -p /var/www/html/hbnb_static")
 
